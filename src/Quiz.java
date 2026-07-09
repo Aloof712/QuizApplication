@@ -8,6 +8,10 @@ public class Quiz {
 
     public void start() {
 
+        boolean playAgain = true;
+
+        while (playAgain){
+
         System.out.println("=================================");
         System.out.println("          JAVA QUIZ");
         System.out.println("=================================");
@@ -16,16 +20,28 @@ public class Quiz {
         System.out.print("Enter your choice: ");
 
         int choice = input.nextInt();
-        input.nextLine(); // Clear the newline
+        input.nextLine(); 
 
         if (choice == 1) {
             startQuiz();
+            System.out.print("\nDO you want to play again ? (Y/N)");
+            String answer = input.nextLine();
+
+            if (!answer.equalsIgnoreCase("Y")) {
+                playAgain = false;
+                System.out.println("Thank you for playing!");
+            }
+
         } else if (choice == 2) {
             System.out.println("Thank you for playing!");
+            playAgain=false;
         } else {
             System.out.println("Invalid choice.");
         }
+
+    
     }
+}
 
     public void startQuiz() {
 
@@ -63,6 +79,6 @@ public class Quiz {
         System.out.println("=================================");
         System.out.println("Your Score : " + score + "/" + bank.questions.length);
 
-        input.close();
+        
     }
 }
