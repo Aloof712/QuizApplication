@@ -15,21 +15,21 @@ public class Quiz {
 
         for (Question q : bank.questions) {
 
-            System.out.println("\n" + q.question);
-            System.out.println("A. " + q.optionA);
-            System.out.println("B. " + q.optionB);
-            System.out.println("C. " + q.optionC);
-            System.out.println("D. " + q.optionD);
+            System.out.println("\n" + q.getQuestion());
+            System.out.println("A. " + q.getOptionA());
+            System.out.println("B. " + q.getOptionB());
+            System.out.println("C. " + q.getOptionC());
+            System.out.println("D. " + q.getOptionD());
 
             System.out.print("Your Answer: ");
             String answer = input.nextLine();
 
-            if (answer.equalsIgnoreCase(q.correctAnswer)) {
+            if (answer.equalsIgnoreCase(q.getCorrectAnswer())) {
                 System.out.println("Correct!");
                 score++;
             } else {
                 System.out.println("Wrong!");
-                System.out.println("Correct Answer: " + q.correctAnswer);
+                System.out.println("Correct Answer: " + q.getCorrectAnswer());
             }
         }
 
