@@ -16,31 +16,39 @@ public class Quiz {
         System.out.println("          JAVA QUIZ");
         System.out.println("=================================");
         System.out.println("1. Start Quiz");
-        System.out.println("2. Exit");
+        System.out.println("2. Instructions");
+        System.out.println("3. Exit");
         System.out.print("Enter your choice: ");
 
         int choice = input.nextInt();
         input.nextLine(); 
 
         if (choice == 1) {
-            startQuiz();
-            System.out.print("\nDO you want to play again ? (Y/N)");
-            String answer = input.nextLine();
 
-            if (!answer.equalsIgnoreCase("Y")) {
-                playAgain = false;
-                System.out.println("Thank you for playing!");
-            }
+    startQuiz();
 
-        } else if (choice == 2) {
-            System.out.println("Thank you for playing!");
-            playAgain=false;
-        } else {
-            System.out.println("Invalid choice.");
-        }
+    System.out.print("\nDo you want to play again? (Y/N): ");
+    String answer = input.nextLine();
 
-    
+    if (!answer.equalsIgnoreCase("Y")) {
+        playAgain = false;
+        System.out.println("Thank you for playing!");
     }
+
+} else if (choice == 2) {
+
+    showInstructions();
+
+} else if (choice == 3) {
+
+    System.out.println("Thank you for playing!");
+    playAgain = false;
+
+} else {
+
+    System.out.println("Invalid choice!");
+
+}}
 }
 
     public void startQuiz() {
@@ -81,4 +89,16 @@ public class Quiz {
 
         
     }
+    public void showInstructions() {
+
+    System.out.println("\n=================================");
+    System.out.println("         INSTRUCTIONS");
+    System.out.println("=================================");
+    System.out.println("1. Each question has one correct answer.");
+    System.out.println("2. Type A, B, C, or D.");
+    System.out.println("3. Each correct answer gives 1 mark.");
+    System.out.println("4. Your final score will be shown at the end.");
+    System.out.println("=================================\n");
+
+}
 }
