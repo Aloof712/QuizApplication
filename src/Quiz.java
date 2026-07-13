@@ -12,13 +12,7 @@ public class Quiz {
 
         while (playAgain){
 
-        System.out.println("=================================");
-        System.out.println("          JAVA QUIZ");
-        System.out.println("=================================");
-        System.out.println("1. Start Quiz");
-        System.out.println("2. Instructions");
-        System.out.println("3. Exit");
-        System.out.print("Enter your choice: ");
+       showMenu();
 
         int choice = input.nextInt();
         input.nextLine(); 
@@ -50,6 +44,17 @@ public class Quiz {
 
 }
 }
+}
+public void showMenu() {
+
+    System.out.println("=================================");
+    System.out.println("          JAVA QUIZ");
+    System.out.println("=================================");
+    System.out.println("1. Start Quiz");
+    System.out.println("2. Instructions");
+    System.out.println("3. Exit");
+    System.out.print("Enter your choice: ");
+
 }
 
     public void startQuiz() {
