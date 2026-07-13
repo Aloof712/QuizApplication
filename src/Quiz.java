@@ -35,20 +35,21 @@ public class Quiz {
         System.out.println("Thank you for playing!");
     }
 
-} else if (choice == 2) {
+          } else if (choice == 2) {
 
-    showInstructions();
+            showInstructions();
 
-} else if (choice == 3) {
+          } else if (choice == 3) {
 
-    System.out.println("Thank you for playing!");
-    playAgain = false;
+               System.out.println("Thank you for playing!");
+               playAgain = false;
 
-} else {
+          } else {
 
-    System.out.println("Invalid choice!");
+               System.out.println("Invalid choice!");
 
-}}
+}
+}
 }
 
     public void startQuiz() {
@@ -82,11 +83,7 @@ public class Quiz {
             questionNumber++;
         }
 
-        System.out.println("\n=================================");
-        System.out.println("        QUIZ FINISHED");
-        System.out.println("=================================");
-        System.out.println("Your Score : " + score + "/" + bank.questions.length);
-
+        showResult();
         
     }
     public void showInstructions() {
@@ -100,5 +97,33 @@ public class Quiz {
     System.out.println("4. Your final score will be shown at the end.");
     System.out.println("=================================\n");
 
+}
+public void showResult() {
+
+    int totalQuestions = bank.questions.length;
+    double percentage = (score * 100.0) / totalQuestions;
+
+    System.out.println("\n=================================");
+    System.out.println("          QUIZ RESULT");
+    System.out.println("=================================");
+    System.out.println("Correct Answers : " + score);
+    System.out.println("Total Questions : " + totalQuestions);
+    System.out.printf("Percentage      : %.2f%%\n", percentage);
+
+    if (percentage == 100) {
+        System.out.println("Grade           : A+");
+        System.out.println("Message         : Excellent!");
+    } else if (percentage >= 75) {
+        System.out.println("Grade           : A");
+        System.out.println("Message         : Great Job!");
+    } else if (percentage >= 50) {
+        System.out.println("Grade           : B");
+        System.out.println("Message         : Good Work!");
+    } else {
+        System.out.println("Grade           : C");
+        System.out.println("Message         : Keep Practicing!");
+    }
+
+    System.out.println("=================================");
 }
 }
