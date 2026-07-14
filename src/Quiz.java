@@ -133,12 +133,12 @@ public void checkAnswer(String answer, Question q) {
 
     if (answer.equalsIgnoreCase(q.getCorrectAnswer())) {
 
-        System.out.println("✅ Correct!");
+        System.out.println("Correct!");
         score++;
 
     } else {
 
-        System.out.println("❌ Wrong!");
+        System.out.println("Wrong!");
         System.out.println("Correct Answer: " + q.getCorrectAnswer());
 
     }
