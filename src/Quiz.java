@@ -64,15 +64,7 @@ public void showMenu() {
 
         for (Question q : bank.questions) {
 
-            System.out.println("\n---------------------------------");
-            System.out.println("Question " + questionNumber);
-            System.out.println("---------------------------------");
-
-            System.out.println(q.getQuestion());
-            System.out.println("A. " + q.getOptionA());
-            System.out.println("B. " + q.getOptionB());
-            System.out.println("C. " + q.getOptionC());
-            System.out.println("D. " + q.getOptionD());
+           displayQuestion(q, questionNumber);
 
             System.out.print("Your Answer: ");
             String answer = input.nextLine();
@@ -130,5 +122,17 @@ public void showResult() {
     }
 
     System.out.println("=================================");
+}
+public void displayQuestion(Question q, int questionNumber) {
+
+    System.out.println("\n---------------------------------");
+    System.out.println("Question " + questionNumber);
+    System.out.println("---------------------------------");
+
+    System.out.println(q.getQuestion());
+    System.out.println("A. " + q.getOptionA());
+    System.out.println("B. " + q.getOptionB());
+    System.out.println("C. " + q.getOptionC());
+    System.out.println("D. " + q.getOptionD());
 }
 }
