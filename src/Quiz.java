@@ -69,13 +69,7 @@ public void showMenu() {
             System.out.print("Your Answer: ");
             String answer = input.nextLine();
 
-            if (answer.equalsIgnoreCase(q.getCorrectAnswer())) {
-                System.out.println("Correct!");
-                score++;
-            } else {
-                System.out.println("Wrong!");
-                System.out.println("Correct Answer: " + q.getCorrectAnswer());
-            }
+           checkAnswer(answer, q);
 
             questionNumber++;
         }
@@ -134,5 +128,20 @@ public void displayQuestion(Question q, int questionNumber) {
     System.out.println("B. " + q.getOptionB());
     System.out.println("C. " + q.getOptionC());
     System.out.println("D. " + q.getOptionD());
+}
+public void checkAnswer(String answer, Question q) {
+
+    if (answer.equalsIgnoreCase(q.getCorrectAnswer())) {
+
+        System.out.println("✅ Correct!");
+        score++;
+
+    } else {
+
+        System.out.println("❌ Wrong!");
+        System.out.println("Correct Answer: " + q.getCorrectAnswer());
+
+    }
+
 }
 }
